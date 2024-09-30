@@ -46,7 +46,7 @@ important_dates = ['2012-10-30']
 hour_data['event'] = np.where(hour_data['dteday'].isin(important_dates), 1, 0)
 
 with st.sidebar:
-    st.image("Saya.jpg")
+    st.image("dashboard/Saya.jpg")
     start_date, end_date = st.date_input(
         label='Rentang Waktu',
         min_value=min_date,
