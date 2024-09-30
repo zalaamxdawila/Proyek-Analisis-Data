@@ -94,9 +94,9 @@ hourly_rentals_df.rename(columns={'cnt': 'total_rentals'}, inplace=True)
 
 fig, ax = plt.subplots(figsize=(10, 5))
 sns.barplot(x="hr", y="total_rentals", data=hourly_rentals_df, palette="viridis")
-ax.set_title("Total Number of Rentals by Hour", fontsize=20)
+ax.set_title("Rata-rata Number of Rentals by Hour", fontsize=20)
 ax.set_xlabel("Hour of the Day", fontsize=15)
-ax.set_ylabel("Total Rentals", fontsize=15)
+ax.set_ylabel("Rata-rata Rentals", fontsize=15)
 ax.set_xticks(range(0, 24))  # Show all hours from 0 to 23
 ax.set_xticklabels([str(hour) + ":00" for hour in range(24)], rotation=45)
 st.pyplot(fig)
