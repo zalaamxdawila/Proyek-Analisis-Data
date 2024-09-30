@@ -79,7 +79,7 @@ with col2:
 fig, ax = plt.subplots(figsize=(16, 8))
 ax.plot(daily_orders_df["dteday"], daily_orders_df["total_rentals"], marker='o', linewidth=2, color="#90CAF9")
 ax.set_title("Daily Rentals", fontsize=20)
-ax.set_ylabel("Total Rentals", fontsize=15)
+ax.set_ylabel("Rata-rata Rentals", fontsize=15)
 ax.set_xlabel("Date", fontsize=15)
 st.pyplot(fig)
 
