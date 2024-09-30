@@ -107,7 +107,7 @@ st.pyplot(fig)
 
 # Menambahkan informasi tambahan
 busiest_hour = hourly_rentals_df.loc[hourly_rentals_df["total_rentals"].idxmax()]["hr"]
-st.write(f"Jam dengan penyewaan tertinggi adalah pada jam {busiest_hour}:00 dengan total penyewaan paling banyak.")
+st.write(f"Jam dengan penyewaan tertinggi adalah {busiest_hour}:00, kemungkinan besar terjadi selama {hour_data[hour_data['hr'] == busiest_hour]['weathersit'].mode()[0]} kondisi cuaca.")
 
 # ========== 1. ANALISIS MUSIMAN ========== #
 st.subheader('Rata-rata Penyewaan Berdasarkan Musim')
@@ -130,7 +130,7 @@ avg_rentals_by_season = season_avg['cnt'].max()
 st.write(f"Musim dengan rata-rata penyewaan tertinggi adalah {season_highest_rentals}, dengan rata-rata {avg_rentals_by_season:.2f} penyewaan.")
 
 # ========== 2. PENGARUH CUACA ========== #
-st.subheader('Pengaruh Variabel Cuaca terhadap Penyewaan')
+st.subheader('Pengaruh Cuaca')
 
 # Visualisasi pengaruh cuaca
 fig, axs = plt.subplots(1, 2, figsize=(12, 5))
@@ -152,7 +152,7 @@ st.pyplot(fig)
 # Menambahkan informasi tambahan
 corr_temp = hour_data['temp'].corr(hour_data['cnt'])
 corr_hum = hour_data['hum'].corr(hour_data['cnt'])
-st.write(f"Korelasi antara suhu dan jumlah penyewaan adalah {corr_temp:.2f}, sedangkan korelasi antara kelembapan dan jumlah penyewaan adalah {corr_hum:.2f}.")
+st.write(f"Korelasi antara suhu dan penyewaan adalah {corr_temp:.2f}, menunjukkan pengaruh yang signifikan. Sementara itu, korelasi kelembapan adalah {corr_hum:.2f}, yang tidak terlalu signifikan.")
 
 # ========== 3. SEGMENTASI PENGGUNA ========== #
 st.subheader('Total Penyewaan Berdasarkan Tipe Pengguna')
