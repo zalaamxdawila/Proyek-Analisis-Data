@@ -2,14 +2,14 @@
 
 ## Setup Environment - Anaconda
 ```
-conda create --name analisis_bike_sharing python=3.9
-conda activate analisis_bike_sharing
+conda create --name bike_sharing_dashboard python=3.9
+conda activate bike_sharing_dashboard
 pip install -r requirements.txt
 ```
 ## Setup Environment - Shell/Terminal
 ```
-mkdir bike_sharing
-cd bike_sharing
+mkdir bike_sharing_dashboard
+cd bike_sharing_dashboard
 pipenv install
 pipenv shell
 pip install -r requirements.txt
