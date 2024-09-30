@@ -31,7 +31,7 @@ def create_hourly_rentals_df(df):
 hour_data = pd.read_csv("dashboard/hour_data_cleaned.csv")
 hour_data['dteday'] = pd.to_datetime(hour_data['dteday']) 
 
-day_data = pd.read_csv("day_data_cleaned.csv") # Jadikan dashboard/day_data_cleaned.csv untuk deploy ke streamlit
+day_data = pd.read_csv("dashboard/day_data_cleaned.csv") # Jadikan dashboard/day_data_cleaned.csv untuk deploy ke streamlit
 day_data['dteday'] = pd.to_datetime(day_data['dteday']) 
 
 
