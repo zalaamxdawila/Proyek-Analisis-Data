@@ -28,11 +28,11 @@ def create_hourly_rentals_df(df):
     return hourly_rentals_df
 
 # Load data dari CSV
-hour_data = pd.read_csv("dashboard/hour_data_cleaned.csv")
-
+hour_data = pd.read_csv("dashboard/hour_data_cleaned.csv") # Jadikan dashboard/hour_data_cleaned.csv untuk deploy ke streamlit
+hour_data['dteday'] = pd.to_datetime(hour_data['dteday']) 
 
 day_data = pd.read_csv("dashboard/day_data_cleaned.csv") # Jadikan dashboard/day_data_cleaned.csv untuk deploy ke streamlit
-
+day_data['dteday'] = pd.to_datetime(day_data['dteday']) 
 
 # Mengurutkan DataFrame
 hour_data.sort_values(by="dteday", inplace=True)
@@ -49,7 +49,7 @@ important_dates = ['2012-10-30']
 hour_data['event'] = np.where(hour_data['dteday'].isin(important_dates), 1, 0)
 
 with st.sidebar:
-    st.image("dashboard/Saya.jpg")
+    st.image("Saya.jpg")# Jadikan dashboard/Saya.csv untuk deploy ke streamlit
     start_date, end_date = st.date_input(
         label='Rentang Waktu',
         min_value=min_date,
